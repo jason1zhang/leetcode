@@ -3,6 +3,10 @@ import java.util.HashMap;
 /**
  * solutions to leetcode problem 1: two sum.
  * 
+ * result:
+ *    Runtime: 3 ms, faster than 87.57% of Java online submissions for Two Sum.
+ *    Memory Usage: 46 MB, less than 23.89% of Java online submissions for Two Sum.
+ * 
  * @author Jason Zhang
  * @version 1.0
  * @since 2022-03-23
