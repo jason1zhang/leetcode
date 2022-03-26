@@ -79,7 +79,7 @@ import java.util.Map;
      *    - Runtime: 224 ms, faster than 9.92% of Java online submissions for Longest Substring Without Repeating Characters.
      *    - Memory Usage: 118.3 MB, less than 5.48% of Java online submissions for Longest Substring Without Repeating Characters.
      * 
-     *    - time complexity: O(n^2) ?
+     *    - time complexity: O(n^2) ??
      * 
      * @param s a string
      * @return the length of longest substring
