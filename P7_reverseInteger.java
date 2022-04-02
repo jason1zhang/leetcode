@@ -79,7 +79,7 @@
      *    - Runtime: 2 ms, faster than 67.94% of Java online submissions for Reverse Integer.
      *    - Memory Usage: 42.1 MB, less than 14.75% of Java online submissions for Reverse Integer.
      * 
-     *    - time complexity:    O(n)
+     *    - time complexity:    O(long10(n))
      *    - space complexity:   O(1)
      * 
      * @param x an integer
