@@ -15,11 +15,12 @@
 
     public void test() {
         // test case 1
-        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        // int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
 
         // test case 2
-        // int[] height = {1, 1};        
-        System.out.printf("The maximum amount of water a container can store is {%d}\n ", maxArea1(height));
+        int[] height = {1, 1};     
+
+        System.out.printf("The maximum amount of water a container can store is {%d}\n ", maxArea2(height));
     }
 
      /**
@@ -88,7 +89,8 @@
      * Solution 2: two pointers
      * 
      * Result:
-     *    - Runtime: 
+     *    - Runtime: 4 ms, faster than 72.53% of Java online submissions for Container With Most Water.
+     *    - Memory Usage: 52.9 MB, less than 82.60% of Java online submissions for Container With Most Water.
      * 
      *    - time complexity:    O(n)
      *    - space complexity:   O(1)
@@ -97,6 +99,23 @@
      * @return the maximum amount of water a container can store
      */
     public static int maxArea2(int[] height) {
-        return 0;
+        int start = 0;
+        int end = height.length - 1;
+
+        int maxWater = 0;
+        int curWater = 0;
+
+        while (start <= end) {
+            curWater = Math.min(height[start], height[end]) * (end - start);
+            maxWater = Math.max(maxWater, curWater);
+
+            if (height[start] <= height[end]) {
+                start++;
+            } else {
+                end--;
+            }
+        }
+
+        return maxWater;
     }
 }
