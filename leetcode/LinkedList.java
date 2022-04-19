@@ -20,6 +20,10 @@ public class LinkedList {
         return this.head;
     }
 
+    public void setHead(ListNode head) {
+        this.head = head;
+    }
+
     /**
      * build the list from an array of integers
      * @param nums an array of integers
@@ -40,7 +44,7 @@ public class LinkedList {
             curr = curr.next;
         }
     }  
-    
+
     /**
      * print out the list
      * 
