@@ -12,8 +12,12 @@ public class LinkedList {
     }
 
     public LinkedList(int[] nums) {
-        head = new ListNode();
-        buildList(nums);
+        if (nums.length == 0) {
+            head = null;
+        } else {
+            head = new ListNode();
+            buildList(nums);
+        }
     }
 
     public ListNode getHead() {
