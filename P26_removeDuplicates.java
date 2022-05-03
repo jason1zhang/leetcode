@@ -75,8 +75,8 @@ import leetcode.*;
      *    - time complexity:    O(n)
      *    - space complexity:   O(1)
      * 
-     * @param s a string
-     * @return true if the input string is valid, false otherwise
+     * @param nums a sorted array
+     * @return the number of distinct integers in the array
      */
     public static int removeDuplicates(int[] nums) {
         int len = nums.length;
