@@ -29,7 +29,7 @@ import leetcode.*;
                    ,{'.','.','.','4','1','9','.','.','5'}
                    ,{'.','.','.','.','8','.','.','7','9'}};
 
-        System.out.printf("The board is a valid Sudolu board? %b.\n", isValidSudoku(board));
+        System.out.printf("The board is a valid Sudolu board? %b.\n", isValidSudoku2(board));
     }
 
      /**
@@ -96,7 +96,7 @@ import leetcode.*;
      * @param board the two dimensional Sudoku board
      * @return true if it's a valid Sudoku board, false otherwise
      */
-    public static boolean isValidSudoku(char[][] board) {
+    public static boolean isValidSudoku1(char[][] board) {
         int size = board.length;
 
         HashSet<Character>[] hsRow = new HashSet[size];
@@ -121,6 +121,40 @@ import leetcode.*;
                     hsRow[i].add(ch);
                     hsCol[j].add(ch);
                     hsSquare[(i / 3) * 3 + j / 3].add(ch);
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * 
+     * Solution 2: use one HashSet
+     * 
+     * Result:
+     *    - Runtime: 29 ms, faster than 11.05% of Java online submissions for Valid Sudoku.
+     *    - Memory Usage: 54.3 MB, less than 5.31% of Java online submissions for Valid Sudoku.
+     * 
+     *    - time complexity:    O(n^2)
+     *    - space complexity:   O(n^2)
+     * 
+     * @param board the two dimensional Sudoku board
+     * @return true if it's a valid Sudoku board, false otherwise
+     */
+    public static boolean isValidSudoku2(char[][] board) {
+        HashSet<String> hs = new HashSet<>();
+
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                char ch = board[i][j];
+
+                if (ch != '.') {
+                    if (!hs.add(String.format("row %d: {%c}", i, ch)) 
+                        || !hs.add(String.format("col %d: {%c}", j, ch))
+                        || !hs.add(String.format("square %d: {%c}", (i / 3) * 3 + j / 3, ch))){
+                            return false;
+                    }
                 }
             }
         }
