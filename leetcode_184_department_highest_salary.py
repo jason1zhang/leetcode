@@ -1,6 +1,5 @@
 """
 LeetCode 184. Department Highest Salary
-使用图片示例数据运行
 """
 
 import pandas as pd
@@ -19,9 +18,6 @@ def department_highest_salary(employee: pd.DataFrame, department: pd.DataFrame) 
     return result[['Department', 'Employee', 'Salary']]
 
 
-# =============================================
-# 使用图片中的示例数据测试
-# =============================================
 if __name__ == "__main__":
     # Employee 表数据（与图片一致）
     employee_data = {
